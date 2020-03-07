@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mi.haircut.mapper.AppointOrdrDetailMapper">
+
+    <resultMap id="BaseResultMap" type="com.mi.haircut.domain.OrderDetail">
+        <result column="detail_id" jdbcType="VARCHAR" property="detailId"></result>
+        <result column="order_id" jdbcType="VARCHAR" property="orderId"></result>
+        <result column="appoint_id" jdbcType="VARCHAR" property="appointId"></result>
+        <result column="appoint_name" jdbcType="VARCHAR" property="appointName"></result>
+        <result column="appoint_time" jdbcType="VARCHAR" property="appointTime"></result>
+        <result column="appoint_price" jdbcType="DECIMAL" property="appointPrice"></result>
+        <result column="appoint_quantity" jdbcType="INTEGER" property="appointQuantity"></result>
+        <result column="appoint_week" jdbcType="TIMESTAMP" property="appointWeek"></result>
+        <result column="remark" jdbcType="VARCHAR" property="remark"></result>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"></result>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"></result>
+    </resultMap>
+    
+
+    <sql id="Base_Column_List">
+        detail_id,order_id,appoint_id,appoint_name,appoint_time,appoint_price,appoint_quantity,
+        appoint_week,remark,create_time,update_time
+    </sql>
+
+    <select id="findByOrderId" parameterType="java.lang.String" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM order_detail
+        WHERE order_id = #{orderId}
+    </select>
+    
+    <select id="findByOrderIdIn" parameterType="map" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM  order_detail
+        WHERE order_id
+        IN
+        <foreach collection="idList" item="type" open="(" close=")" separator=",">
+            #{type}
+        </foreach>
+    </select>
+</mapper>

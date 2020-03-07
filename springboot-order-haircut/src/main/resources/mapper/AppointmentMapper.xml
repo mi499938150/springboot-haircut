@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mi.haircut.mapper.AppointmentMapper">
+    <resultMap id="BaseResultMap" type="com.mi.haircut.domain.Appointment">
+        <result column="appoint_id" jdbcType="VARCHAR"  property="appointId"></result>
+        <result column="appoint_name" jdbcType="VARCHAR" property="appointName"></result>
+        <result column="appoint_week" jdbcType="TIMESTAMP" property="appointWeek"></result>
+        <result column="appoint_time" jdbcType="VARCHAR" property="appointTime"></result>
+        <result column="appoint_price" jdbcType="DECIMAL" property="appointPrice"></result>
+        <result column="appoint_status" jdbcType="INTEGER" property="appointStatus"></result>
+        <result column="category_type" jdbcType="INTEGER" property="categoryType"></result>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"></result>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"></result>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    appoint_id,appoint_name,appoint_week,appoint_time,appoint_price,appoint_status,
+    category_type,create_time,update_time
+    </sql>
+
+    <select id="getAppointDateAndName" parameterType="String"  resultMap="BaseResultMap">
+          SELECT
+        <include refid="Base_Column_List" />
+        FROM appoint_ment WHERE
+        <if test="date != null and date != ''">
+            appoint_week = #{date}
+        </if>
+        <if test="appointName != null and appointName != ''">
+            and appoint_name = #{appointName}
+        </if>
+        ORDER BY appoint_time
+    </select>
+</mapper>

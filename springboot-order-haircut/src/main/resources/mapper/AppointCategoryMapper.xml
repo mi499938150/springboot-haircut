@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mi.haircut.mapper.AppointCategoryMapper">
+    <resultMap id="BaseResultMap" type="com.mi.haircut.domain.AppointCategory">
+        <result column="category_id" jdbcType="INTEGER"  property="categoryId"></result>
+        <result column="category_name" jdbcType="VARCHAR" property="categoryName"></result>
+        <result column="category_type" jdbcType="INTEGER" property="categoryType"></result>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"></result>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"></result>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        category_id,category_name,category_type,create_time,update_time
+    </sql>
+
+
+    <select id="findByCategoryTypeIn"  parameterType="map" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM appoint_category WHERE category_type
+        IN
+        <foreach collection="idList" item="type" open="(" close=")" separator=",">
+            #{type}
+        </foreach>
+    </select>
+
+</mapper>
+

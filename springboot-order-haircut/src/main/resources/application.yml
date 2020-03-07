@@ -1,0 +1,83 @@
+#沙箱账号
+#pay:
+#  alipay:
+#    gatewayUrl: https://openapi.alipaydev.com/gateway.do
+#    appid: 2016101800718136
+#    appPrivateKey: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCOUnp5ts0UCcjEbGfjZW9CiIMOKj9iW7/hk5nm7fky+C+wQ/74VsxuCY88sSq0hwLmjysWfDSoCgGKwY/cXboeh7AeFSDxdIMIhQlj2HTYEOxh3BYJaKpM71kndK4SPSQS/QJ5jzXE5Ey+aQ7YfPX2Ohp3XGlN/WVQKCiKGO0wWp1Hv33FBAfmmhAofMqy1NwV0UjiFrfvVBp4/WFzOnQ7bsGYG9kIFY4EuV0an1b12NIdsekuRyAZ216iAT7oV5pLiAXTkkOPqHADqkIhE1kg8C+ECPUud3dmMyM/LxeqWQ0q9WI76rj/aRphBlc4cAfU+abBCQSOQRf90KZPKILlAgMBAAECggEBAIH43JSO1lY4YTrQbUeDeMnf9R9Yga4HcAJHU0NLjEp50MM+NXkBe4v5+u9INGHM8l8v2/+aylOzX5kiD4kFp1T+QV4XmZAoAQokxGCEaqBvRBBSd2V8ShoccuTPb7CEWY9ls37jxAzdGSDCvKYD6HNGuKjMofZxNLaxFeSXwvRmS76a0XYfhqbauF7tCS9uURINGEihMDNLrIEQl1mAKqW+rgxegKn4njIMEA0AXFhZL/TnNtN+obC6EG/N21eD4NFdef5s5I95kb9Y0Qj/HeUxzHbi0bLyejFcbC73oMuQvTCi80qe+s65UOf9wBKeREC18rVa+u0Yk98UrJNLS7kCgYEA3YWiW8guBdFEIGaap2HmorxotFmXrUWodS40m/JhmEqKEwD5BR3KYYHY+nG+uK2H13CNi4nyAXxYwahv8u4mViPD0iiPzWHFtwOCrVFYcoxyTrG0IzGmrVg2UaIR3aE/cDDO3AyNsQKAznbsY1omze7FhSfGiZK4Cadpb2M8QZMCgYEApHkw4qT7uyvwoFY7uPY8TQGlGnnCPET/w90QtwUP99AJmLPyLDTZ4gxQxuHZn5I7KdIt0eXFFlZI31WbRnZTJDlLNORJyWOxu6yfuN7R6LnXyi7RyP0uxDz1exXZBVvpZ3PztZ09M5e0XMddzMEqEO9fmarKJgRJ+li6TKjE1KcCgYEAh36zvlwE+n3zo7Xepr8VKTkA+j9KrStMTNCEUVbCJzqAlfskVeLQ5S9dHmLwe1l5G2e2zEEGC66ZQ2rZfsf4HvwlTKiOvNsu6jB1f7mf1gDd8hBz1IsMHj80il4Ne3ijquXPwXzUNg8H5kGLeYGs9o0zt6yKnZ9mflEuBnm2Y40CgYEAi7p94n6hcfExezXnhQqETjOwjV6VulgwJbjgY2xElZbDIFz3x8CavmUSFvR2yw8TfkMWNDUNDB3/yOTUhrctiR+3mda8LQCqVTOhehCqqhmAjz7ZcPRPT94t+wSjm97q2r3ydP+BqBwg2ZVyRepxD3QddtJW7JdGNg49L7VNiw8CgYBksokV/QY7jLDzTD4vz/Ajj3N3cipYT//d9qCzmMZVM66cfuQxKpqN7O1s2qdBUeVl6RpSrXxFU0FeEhyNMT6mS4ia7HnY1WheDMElCIjPLQoAX32ue0QFFhv/xt7n82IO+4k2lDANCSPec/gcohqIilfuXPllrMGIq3gEM3pq9w==
+#    alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsNXDiY6rz6YlyI877zLjp+T7RnXpL1zKqGnhIqQxImRv141mELGH71tpuel2tXMHso6aAEYDog8lcw2OJ9CA3gotKaXERQvAIt1FgeQE7BDHKttfdbMP8YshbA9Mqo/wvEEp03GkJun+Vg33W10eXOyKBU+Dw68EPerRf1a9932qM8sSpuAmkB+KU7HKrVBN2Hyk6raVbmoqKjula2wIM/xT/YbYtkdztNJH6vfeflP/IHZpoM/46bYHzMx+I1dq/dnBpFc15f/lGIUxfFpBUlpg0KfPrMDREZIFaSreJmVoCM5wfeQ1q8M+euJPYyboisT1zhAZDBos6uxejmd+aQIDAQAB
+#    returnUrl: http://www.gouptea.top/haircut/alipay/return
+#    notifyUrl: http://www.gouptea.top/haircut/alipay/notify
+
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+  #  password: 123456
+  #  url: jdbc:mysql://localhost/haircut?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    password: ChaMi@.!123
+    url: jdbc:mysql://115.29.173.175/haircut?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+  jackson:
+    default-property-inclusion: non_null
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    enabled: true
+    servlet:
+      content-type: text/html
+    cache: false
+  freemarker:
+    template-loader-path: classpath:/templates/
+    charset: UTF-8
+    cache: false
+    expose-request-attributes: true
+    expose-session-attributes: true
+    expose-spring-macro-helpers: true
+    suffix: .ftl
+  mvc:
+    static-path-pattern: /**
+#  redis:
+#    host: 115.29.173.175
+#    port: 6379
+#    jedis:
+#      pool:
+#        max-active: 100
+#        max-wait: 3000ms
+#        min-idle: 0
+#        max-idle: 20
+#    timeout: 3000ms
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.mi.haircut.domain
+
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count==countSql
+  page-size-zero: true
+
+
+server:
+  servlet:
+    context-path: /haircut
+  port: 8080
+
+
+logging:
+  file:
+    path: E:/logs
+
+
+wechat:
+  mpAppId:   wxd364b79e3d234415    #wx5904758eb34b27d1
+  mpAppSecret: 763a51818670ef800bb6e1507cc4eb79 #c14567d2bfc1bd1f1091cca02c8fe7c8
+  mchId: 1492927442
+  mchKey: a1b2c3D4F5G6H7J8K9l10o11p12q13zx
+  keyPath:  /usr/local/wxcert/apiclient_cert.p12 #D:\Program Files\WXCertUtil\cert\apiclient_cert.p12
+  notifyUrl: http://www.gouptea.top/haircut/pay/notify
